@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 setup(name='blockchain_lab',
-version='0.1.0',
+version='0.2.0',
 description="""A fully functional blockchain lab.""",
 long_description="""
 # Blockchain Lab
