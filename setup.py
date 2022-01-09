@@ -13,12 +13,30 @@ A fully functional blockchain lab.
 pip3 install blockchain_lab
 ```
 # Using
+## In another script
+```python
+from blockchain_lab import blockchain_lab
+
+blockchain_lab.create()
+```
+```python
+from blockchain_lab import blockchain_lab
+
+blockchain_lab.status()
+```
+```python
+from blockchain_lab import blockchain_lab
+
+blockchain_lab.send_transaction(receiver = "decentra_network", amount = 5000)
+```
+```python
+from blockchain_lab import blockchain_lab
+
+blockchain_lab.delete()
+```
 ## In command line
 ```console
 blockchain_lab_create
-```
-```console
-blockchain_lab_delete
 ```
 ```console
 blockchain_lab_status
@@ -26,9 +44,12 @@ blockchain_lab_status
 ```console
 blockchain_lab_send_transaction -r decentra_network -a 5000
 ```
+```console
+blockchain_lab_delete
+```
 """,
 long_description_content_type='text/markdown',
-url='https://github.com/Decentra-Network/blockchain_lab',
+url='https://github.com/Decentra-Network/Blockchain-Lab',
 author='Decentra Network Developers',
 author_email='onur@decentranetwork.org',
 license='MPL-2.0',
