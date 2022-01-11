@@ -13,6 +13,7 @@ import requests
 import time
 
 
+
 class blockchain_lab:
 
     @staticmethod
@@ -20,15 +21,12 @@ class blockchain_lab:
         os.system("git clone https://github.com/Decentra-Network/Decentra-Network")
         os.system("docker pull ghcr.io/decentra-network/api:latest")
         os.system("docker image tag ghcr.io/decentra-network/api decentra-network-api")
-        os.system("python3 Decentra-Network/functional_test/docker/docker.py -nn 3")
+        os.system("python3 Decentra-Network/functional_test/docker/docker.py -nn 3 -i -r")
 
 
     @staticmethod
     def delete():
-        os.system("docker rm -f $(docker ps -a -q -f ancestor=decentra-network-api)")
-        os.system("docker volume rm $(docker volume ls -q -f name=decentra-network)")
-
-        os.system("docker network rm dn-net")
+        os.system("python3 Decentra-Network/functional_test/docker/docker.py -nn 3 -d")
 
     @staticmethod
     def status():
