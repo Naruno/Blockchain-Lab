@@ -20,7 +20,6 @@ class blockchain_lab:
     def create_docker():
         os.system("git clone https://github.com/Decentra-Network/Decentra-Network")
         os.system("docker pull ghcr.io/decentra-network/api:latest")
-        os.system("docker image tag ghcr.io/decentra-network/api decentra-network-api")
         os.system("python3 Decentra-Network/auto_builders/docker.py -nn 3 -i -r -s")
 
     @staticmethod
