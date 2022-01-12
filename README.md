@@ -18,11 +18,16 @@ from blockchain_lab import blockchain_lab
 
 blockchain_lab.delete_docker()
 ```
-### Local (Not Recommended) | Create
+### Local | Create & Delete
 ```python
 from blockchain_lab import blockchain_lab
 
 blockchain_lab.create_local()
+```
+```python
+from blockchain_lab import blockchain_lab
+
+blockchain_lab.delete_docker()
 ```
 ### Status
 ```python
@@ -47,9 +52,12 @@ blockchain_lab_create_docker
 ```console
 blockchain_lab_delete_docker
 ```
-### Local (Not Recommended) | Create
+### Local | Create & Delete
 ```console
 blockchain_lab_create_local
+```
+```console
+blockchain_lab_delete_docker
 ```
 ### Status
 ```console

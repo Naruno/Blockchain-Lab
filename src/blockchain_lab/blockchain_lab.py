@@ -21,16 +21,20 @@ class blockchain_lab:
         os.system("git clone https://github.com/Decentra-Network/Decentra-Network")
         os.system("docker pull ghcr.io/decentra-network/api:latest")
         os.system("docker image tag ghcr.io/decentra-network/api decentra-network-api")
-        os.system("python3 Decentra-Network/auto_builders/docker.py -nn 3 -i -r")
+        os.system("python3 Decentra-Network/auto_builders/docker.py -nn 3 -i -r -s")
 
     @staticmethod
     def create_local():
         os.system("git clone https://github.com/Decentra-Network/Decentra-Network")
-        os.system("python3 Decentra-Network/auto_builders/local.py -nn 3 -i -r")
+        os.system("python3 Decentra-Network/auto_builders/local.py -nn 3 -i -r -s")
 
     @staticmethod
     def delete_docker():
         os.system("python3 Decentra-Network/auto_builders/docker.py -nn 3 -d")
+
+    @staticmethod
+    def delete_local():
+        os.system("python3 Decentra-Network/auto_builders/local.py -nn 3 -d")
 
     @staticmethod
     def status():
