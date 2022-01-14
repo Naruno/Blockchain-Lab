@@ -17,7 +17,7 @@ Notable changes
 
 ## Using In Another Script
 
-With this release you can use in another script, plase 
+With this release you can use in another script, please 
 read readme.md for instruction.
 
 0.2.0-alpha change log
