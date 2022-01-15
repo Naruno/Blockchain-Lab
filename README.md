@@ -7,27 +7,28 @@ pip3 install blockchain_lab
 ```
 # Using
 ## In another script
+You can give path as a argument to blockchain_lab(path).
 ### Docker | Create & Delete
 ```python
 from blockchain_lab import blockchain_lab
 
-blockchain_lab.create_docker()
+blockchain_lab().create_docker()
 ```
 ```python
 from blockchain_lab import blockchain_lab
 
-blockchain_lab.delete_docker()
+blockchain_lab().delete_docker()
 ```
 ### Local | Create & Delete
 ```python
 from blockchain_lab import blockchain_lab
 
-blockchain_lab.create_local()
+blockchain_lab().create_local()
 ```
 ```python
 from blockchain_lab import blockchain_lab
 
-blockchain_lab.delete_local()
+blockchain_lab().delete_local()
 ```
 ### Status
 ```python
@@ -44,7 +45,7 @@ blockchain_lab.send_transaction(receiver = "decentra_network", amount = 5000)
 
 
 ## In command line
-
+You can give path as a parameter with -p or --path in create and delete.
 ### Docker | Create & Delete
 ```console
 blockchain_lab_create_docker
