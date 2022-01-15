@@ -16,14 +16,23 @@ import time
 
 class blockchain_lab:
 
-    @staticmethod
-    def create_docker():
+    def __init__(self, path=os.getcwd()):
+        self.old_path = os.getcwd()
+        self.path = path
+
+    def create_docker(self):
+
+        os.chdir(self.path)
+
         os.system("git clone https://github.com/Decentra-Network/Decentra-Network")
         os.system("docker pull ghcr.io/decentra-network/api:latest")
         os.system("python3 Decentra-Network/auto_builders/docker.py -nn 3 -i -r -s")
 
-    @staticmethod
-    def create_local():
+        os.chdir(self.old_path)
+
+    def create_local(self):
+
+        os.chdir(self.path)
 
         if sys.platform != "linux":
             print("Local builded lab only available on Linux")
@@ -32,8 +41,11 @@ class blockchain_lab:
         os.system("git clone https://github.com/Decentra-Network/Decentra-Network")
         os.system("python3 Decentra-Network/auto_builders/local.py -nn 3 -i -r -s")
 
-    @staticmethod
-    def delete_docker():
+        os.chdir(self.old_path)
+
+    def delete_docker(self):
+
+        os.chdir(self.path)
 
         if sys.platform != "linux":
             print("Local builded lab only available on Linux")
@@ -41,9 +53,15 @@ class blockchain_lab:
 
         os.system("python3 Decentra-Network/auto_builders/docker.py -nn 3 -d")
 
-    @staticmethod
-    def delete_local():
+        os.chdir(self.old_path)
+
+    def delete_local(self):
+
+        os.chdir(self.path)
+
         os.system("python3 Decentra-Network/auto_builders/local.py -nn 3 -d")
+        
+        os.chdir(self.old_path)
 
     @staticmethod
     def status():
@@ -65,6 +83,64 @@ class blockchain_lab:
         print("Result of the transaction: ")
         print(result)
 
+
+def blockchain_lab_create_docker():
+    parser = argparse.ArgumentParser(
+        description="Create blockchain lab with decentra-network-api docker."
+    )
+
+    parser.add_argument("-p", "--path", type=str, help="Give the path to the blockchain lab")
+
+    args = parser.parse_args()
+
+    if len(sys.argv) < 2:
+        blockchain_lab().create_docker()
+    else:
+        blockchain_lab(args.path).create_docker()
+
+
+def blockchain_lab_create_local():
+    parser = argparse.ArgumentParser(
+        description="Create blockchain lab with local system."
+    )
+
+    parser.add_argument("-p", "--path", type=str, help="Give the path to the blockchain lab")
+
+    args = parser.parse_args()
+
+    if len(sys.argv) < 2:
+        blockchain_lab().create_local()
+    else:
+        blockchain_lab(args.path).create_local()
+
+def blockchain_lab_delete_docker():
+    parser = argparse.ArgumentParser(
+        description="Delete blockchain lab with decentra-network-api docker."
+    )
+
+    parser.add_argument("-p", "--path", type=str, help="Give the path to the blockchain lab")
+
+    args = parser.parse_args()
+
+    if len(sys.argv) < 2:
+        blockchain_lab().delete_docker()
+    else:
+        blockchain_lab(args.path).delete_docker()
+
+
+def blockchain_lab_delete_local():
+    parser = argparse.ArgumentParser(
+        description="Delete blockchain lab with local system."
+    )
+
+    parser.add_argument("-p", "--path", type=str, help="Give the path to the blockchain lab")
+
+    args = parser.parse_args()
+
+    if len(sys.argv) < 2:
+        blockchain_lab().delete_local()
+    else:
+        blockchain_lab(args.path).delete_local()
 
 
 def blockchain_lab_send_transaction():
