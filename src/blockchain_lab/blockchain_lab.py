@@ -24,11 +24,21 @@ class blockchain_lab:
 
     @staticmethod
     def create_local():
+
+        if sys.platform != "linux":
+            print("Local builded lab only available on Linux")
+            return
+
         os.system("git clone https://github.com/Decentra-Network/Decentra-Network")
         os.system("python3 Decentra-Network/auto_builders/local.py -nn 3 -i -r -s")
 
     @staticmethod
     def delete_docker():
+
+        if sys.platform != "linux":
+            print("Local builded lab only available on Linux")
+            return        
+
         os.system("python3 Decentra-Network/auto_builders/docker.py -nn 3 -d")
 
     @staticmethod
