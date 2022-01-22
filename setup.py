@@ -14,7 +14,12 @@ pip3 install blockchain_lab
 ```
 # Using
 ## In another script
-You can give path as a argument to blockchain_lab(path).
+You can give these parameters in blockchain_lab()
+
+- Node number with "node_number"
+- Security circle number with "security_circle_number"
+- Path with "path"
+
 ### Docker | Create & Delete
 ```python
 from blockchain_lab import blockchain_lab
@@ -52,7 +57,12 @@ blockchain_lab.send_transaction(receiver = "decentra_network", amount = 5000)
 
 
 ## In command line
-You can give path as a parameter with -p or --path in create and delete.
+You can give these parameters in command line arguments of 
+create and delete functions.
+
+- Node number with "-nn" or "--nodenumber"
+- Security circle number with "-scn" or "--securitycirclenumber"
+- Path with "-p" or "--path"
 ### Docker | Create & Delete
 ```console
 blockchain_lab_create_docker

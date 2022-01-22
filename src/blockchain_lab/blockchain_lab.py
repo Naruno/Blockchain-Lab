@@ -16,7 +16,9 @@ import time
 
 class blockchain_lab:
 
-    def __init__(self, path=os.getcwd()):
+    def __init__(self, node_number = 3, security_circle_number = 1, path=os.getcwd()):
+        self.node_number = node_number
+        self.security_circle_number = security_circle_number
         self.old_path = os.getcwd()
         self.path = path
 
@@ -26,7 +28,7 @@ class blockchain_lab:
 
         os.system("git clone https://github.com/Decentra-Network/Decentra-Network")
         os.system("docker pull ghcr.io/decentra-network/api:latest")
-        os.system("python3 Decentra-Network/auto_builders/docker.py -nn 3 -i -r -s")
+        os.system(f"python3 Decentra-Network/auto_builders/docker.py -nn {self.node_number} -scn {self.security_circle_number} -i -r -s")
 
         os.chdir(self.old_path)
 
@@ -39,7 +41,7 @@ class blockchain_lab:
             return
 
         os.system("git clone https://github.com/Decentra-Network/Decentra-Network")
-        os.system("python3 Decentra-Network/auto_builders/local.py -nn 3 -i -r -s")
+        os.system(f"python3 Decentra-Network/auto_builders/local.py -nn {self.node_number} -scn {self.security_circle_number} -i -r -s")
 
         os.chdir(self.old_path)
 
@@ -51,7 +53,7 @@ class blockchain_lab:
             print("Local builded lab only available on Linux")
             return        
 
-        os.system("python3 Decentra-Network/auto_builders/docker.py -nn 3 -d")
+        os.system(f"python3 Decentra-Network/auto_builders/docker.py -nn {self.node_number} -scn {self.security_circle_number} -d")
 
         os.chdir(self.old_path)
 
@@ -59,7 +61,7 @@ class blockchain_lab:
 
         os.chdir(self.path)
 
-        os.system("python3 Decentra-Network/auto_builders/local.py -nn 3 -d")
+        os.system(f"python3 Decentra-Network/auto_builders/local.py -nn {self.node_number} -scn {self.security_circle_number} -d")
         
         os.chdir(self.old_path)
 
@@ -89,14 +91,26 @@ def blockchain_lab_create_docker():
         description="Create blockchain lab with decentra-network-api docker."
     )
 
+    parser.add_argument("-nn", "--nodenumber", type=str, help="Give the node number to the blockchain lab")
+    parser.add_argument("-scn", "--securitycirclenumber", type=str, help="Give the security circle number to the blockchain lab")
+
     parser.add_argument("-p", "--path", type=str, help="Give the path to the blockchain lab")
 
     args = parser.parse_args()
 
-    if len(sys.argv) < 2:
-        blockchain_lab().create_docker()
-    else:
-        blockchain_lab(args.path).create_docker()
+    nodenumber = 3
+    securitycirclenumber = 1
+    path = os.getcwd()
+
+    if args.nodenumber is not None:
+        nodenumber = args.nodenumber
+    if args.securitycirclenumber is not None:
+        securitycirclenumber = args.securitycirclenumber
+    if args.path is not None:
+        path = args.path
+
+    
+    blockchain_lab(node_number=nodenumber, security_circle_number = securitycirclenumber, path=path).create_docker()
 
 
 def blockchain_lab_create_local():
@@ -104,28 +118,52 @@ def blockchain_lab_create_local():
         description="Create blockchain lab with local system."
     )
 
+    parser.add_argument("-nn", "--nodenumber", type=str, help="Give the node number to the blockchain lab")
+    parser.add_argument("-scn", "--securitycirclenumber", type=str, help="Give the security circle number to the blockchain lab")
+
     parser.add_argument("-p", "--path", type=str, help="Give the path to the blockchain lab")
 
     args = parser.parse_args()
 
-    if len(sys.argv) < 2:
-        blockchain_lab().create_local()
-    else:
-        blockchain_lab(args.path).create_local()
+    nodenumber = 3
+    securitycirclenumber = 1
+    path = os.getcwd()
+
+    if args.nodenumber is not None:
+        nodenumber = args.nodenumber
+    if args.securitycirclenumber is not None:
+        securitycirclenumber = args.securitycirclenumber
+    if args.path is not None:
+        path = args.path
+
+    
+    blockchain_lab(node_number=nodenumber, security_circle_number = securitycirclenumber, path=path).create_local()
 
 def blockchain_lab_delete_docker():
     parser = argparse.ArgumentParser(
         description="Delete blockchain lab with decentra-network-api docker."
     )
 
+    parser.add_argument("-nn", "--nodenumber", type=str, help="Give the node number to the blockchain lab")
+    parser.add_argument("-scn", "--securitycirclenumber", type=str, help="Give the security circle number to the blockchain lab")
+
     parser.add_argument("-p", "--path", type=str, help="Give the path to the blockchain lab")
 
     args = parser.parse_args()
 
-    if len(sys.argv) < 2:
-        blockchain_lab().delete_docker()
-    else:
-        blockchain_lab(args.path).delete_docker()
+    nodenumber = 3
+    securitycirclenumber = 1
+    path = os.getcwd()
+
+    if args.nodenumber is not None:
+        nodenumber = args.nodenumber
+    if args.securitycirclenumber is not None:
+        securitycirclenumber = args.securitycirclenumber
+    if args.path is not None:
+        path = args.path
+
+    
+    blockchain_lab(node_number=nodenumber, security_circle_number = securitycirclenumber, path=path).delete_docker()
 
 
 def blockchain_lab_delete_local():
@@ -133,14 +171,26 @@ def blockchain_lab_delete_local():
         description="Delete blockchain lab with local system."
     )
 
+    parser.add_argument("-nn", "--nodenumber", type=str, help="Give the node number to the blockchain lab")
+    parser.add_argument("-scn", "--securitycirclenumber", type=str, help="Give the security circle number to the blockchain lab")
+
     parser.add_argument("-p", "--path", type=str, help="Give the path to the blockchain lab")
 
     args = parser.parse_args()
 
-    if len(sys.argv) < 2:
-        blockchain_lab().delete_local()
-    else:
-        blockchain_lab(args.path).delete_local()
+    nodenumber = 3
+    securitycirclenumber = 1
+    path = os.getcwd()
+
+    if args.nodenumber is not None:
+        nodenumber = args.nodenumber
+    if args.securitycirclenumber is not None:
+        securitycirclenumber = args.securitycirclenumber
+    if args.path is not None:
+        path = args.path
+
+    
+    blockchain_lab(node_number=nodenumber, security_circle_number = securitycirclenumber, path=path).delete_local()
 
 
 def blockchain_lab_send_transaction():
