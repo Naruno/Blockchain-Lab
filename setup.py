@@ -1,10 +1,11 @@
 from setuptools import setup
 
 
-setup(name='blockchain_lab',
-      version='0.5.0',
-      description="""A fully functional blockchain lab.""",
-      long_description="""
+setup(
+    name="blockchain_lab",
+    version="0.5.0",
+    description="""A fully functional blockchain lab.""",
+    long_description="""
 # Blockchain Lab
 A fully functional blockchain lab.
 
@@ -87,22 +88,23 @@ blockchain_lab_send_transaction -r decentra-network -a 5000 -d blockchain-lab
 ```
 
 """,
-      long_description_content_type='text/markdown',
-      url='https://github.com/Decentra-Network/Blockchain-Lab',
-      author='Decentra Network Developers',
-      author_email='onur@decentranetwork.org',
-      license='MPL-2.0',
-      packages=["blockchain_lab"],
-      package_dir={'': 'src'},
-      entry_points={
-          'console_scripts': [
-              'blockchain_lab_create_docker=blockchain_lab.blockchain_lab:blockchain_lab_create_docker',
-              'blockchain_lab_create_local=blockchain_lab.blockchain_lab:blockchain_lab_create_local',
-              "blockchain_lab_delete_docker=blockchain_lab.blockchain_lab:blockchain_lab_delete_docker",
-              "blockchain_lab_delete_local=blockchain_lab.blockchain_lab:blockchain_lab_delete_local",
-              "blockchain_lab_status=blockchain_lab.blockchain_lab:blockchain_lab.status",
-              "blockchain_lab_send_transaction=blockchain_lab.blockchain_lab:blockchain_lab_send_transaction"
-          ],
-      },
-      python_requires=">=3.6",
-      zip_safe=False)
+    long_description_content_type="text/markdown",
+    url="https://github.com/Decentra-Network/Blockchain-Lab",
+    author="Decentra Network Developers",
+    author_email="onur@decentranetwork.org",
+    license="MPL-2.0",
+    packages=["blockchain_lab"],
+    package_dir={"": "src"},
+    entry_points={
+        "console_scripts": [
+            "blockchain_lab_create_docker=blockchain_lab.blockchain_lab:blockchain_lab_create_docker",
+            "blockchain_lab_create_local=blockchain_lab.blockchain_lab:blockchain_lab_create_local",
+            "blockchain_lab_delete_docker=blockchain_lab.blockchain_lab:blockchain_lab_delete_docker",
+            "blockchain_lab_delete_local=blockchain_lab.blockchain_lab:blockchain_lab_delete_local",
+            "blockchain_lab_status=blockchain_lab.blockchain_lab:blockchain_lab.status",
+            "blockchain_lab_send_transaction=blockchain_lab.blockchain_lab:blockchain_lab_send_transaction",
+        ],
+    },
+    python_requires=">=3.6",
+    zip_safe=False,
+)
