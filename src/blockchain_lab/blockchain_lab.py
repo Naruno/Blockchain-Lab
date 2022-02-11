@@ -77,8 +77,8 @@ class blockchain_lab:
         print(f"- {node_3_status}")
 
     @staticmethod
-    def send_transaction(receiver, amount):
-        requests.get(f"http://localhost:8000/send/coin/{receiver}/{amount}/123")
+    def send_transaction(receiver, amount, data="blockchain-lab"):
+        requests.get(f"http://localhost:8000/send/coin-data/{receiver}/{amount}/{data}/123")
         time.sleep(15)
         result = requests.get("http://localhost:8000/export/transactions/json").text
 
@@ -200,10 +200,13 @@ def blockchain_lab_send_transaction():
 
     parser.add_argument("-r", "--receiver", type=str, help="Give the receiver adress")
     parser.add_argument("-a", "--amount", type=str, help="Give the amount")
+    parser.add_argument("-d", "--data", type=str, help="Give the data")
 
     args = parser.parse_args()
+
+    print(args.data)
 
     if len(sys.argv) < 3:
         print("Please give the receiver (-r) adress and amount (-a)")
     else:
-        blockchain_lab.send_transaction(args.receiver, args.amount) 
+        blockchain_lab.send_transaction(args.receiver, args.amount, args.data)
