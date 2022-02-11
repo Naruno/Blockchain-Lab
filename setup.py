@@ -57,7 +57,7 @@ blockchain_lab.send_transaction(receiver = "decentra-network", amount = 5000, da
 
 
 ## In command line
-You can give these parameters in command line arguments of 
+You can give these parameters in command line arguments of
 create and delete functions.
 
 - Node number with "-nn" or "--nodenumber"
