@@ -28,6 +28,9 @@ With this release you can set data parameter for transaction.
 - Added data parameter to the send function
 - Added argument for send transaction command
 
+### Docs
+- Added -alpha to the old release notes
+
 ### Readme
 - Added instruction for data parameter.
 
