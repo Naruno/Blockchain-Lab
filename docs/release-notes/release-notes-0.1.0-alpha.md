@@ -1,10 +1,8 @@
-0.1.0-alpha Release Notes
-====================
+# 0.1.0-alpha Release Notes
 
 This release includes core features.
 
-Credits
-=======
+# Credits
 
 Thanks to everyone who directly contributed to this release:
 
