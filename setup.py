@@ -1,6 +1,5 @@
 from setuptools import setup
 
-
 setup(
     name="blockchain_lab",
     version="0.5.0",

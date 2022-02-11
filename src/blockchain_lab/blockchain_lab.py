@@ -9,8 +9,9 @@
 import argparse
 import os
 import sys
-import requests
 import time
+
+import requests
 
 
 class blockchain_lab:
