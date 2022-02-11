@@ -52,7 +52,7 @@ blockchain_lab.status()
 ```python
 from blockchain_lab import blockchain_lab
 
-blockchain_lab.send_transaction(receiver = "decentra_network", amount = 5000)
+blockchain_lab.send_transaction(receiver = "decentra-network", amount = 5000, data = "blockchain-lab")
 ```
 
 
@@ -83,8 +83,9 @@ blockchain_lab_status
 ```
 ### Test with a transaction
 ```console
-blockchain_lab_send_transaction -r decentra_network -a 5000
+blockchain_lab_send_transaction -r decentra-network -a 5000 -d blockchain-lab
 ```
+
 """,
 long_description_content_type='text/markdown',
 url='https://github.com/Decentra-Network/Blockchain-Lab',
