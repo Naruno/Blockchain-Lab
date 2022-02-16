@@ -1,4 +1,5 @@
-# Blockchain Lab
+# Blockchain Lab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Decentra-Network/Blockchain-Lab/blob/master/blockchain_lab.ipynb)
+
 
 A fully functional blockchain lab.
 
