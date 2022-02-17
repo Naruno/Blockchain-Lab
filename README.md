@@ -1,4 +1,4 @@
-# Blockchain Lab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Decentra-Network/Blockchain-Lab/blob/master/blockchain_lab.ipynb)
+# Blockchain Lab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Decentra-Network/Blockchain-Lab/blob/master/blockchain_lab.ipynb) [![Open in Cloud Shell](https://img.shields.io/badge/Google-Open%20In%20Cloud%20Shell-blue)](https://ssh.cloud.google.com/cloudshell/open?shellonly=true&cloudshell_git_repo=https://github.com/Decentra-Network/Blockchain-Lab&cloudshell_tutorial=blockchain_lab.md)
 
 
 A fully functional blockchain lab.
