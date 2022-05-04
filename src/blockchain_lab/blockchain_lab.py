@@ -304,16 +304,12 @@ def blockchain_lab_send_transaction():
 
     parser.add_argument("-r",
                         "--receiver",
+                        default="DecentraNetworkCommunity",
                         type=str,
                         help="Give the receiver adress")
-    parser.add_argument("-a", "--amount", type=str, help="Give the amount")
-    parser.add_argument("-d", "--data", type=str, help="Give the data")
+    parser.add_argument("-a", "--amount", default=5000, type=str, help="Give the amount")
+    parser.add_argument("-d", "--data", default="Hello, i am blockchain lab.", type=str, help="Give the data")
 
     args = parser.parse_args()
 
-    print(args.data)
-
-    if len(sys.argv) < 3:
-        print("Please give the receiver (-r) adress and amount (-a) and data (-d)")
-    else:
-        blockchain_lab.send_transaction(args.receiver, args.amount, args.data)
+    blockchain_lab.send_transaction(args.receiver, args.amount, args.data)
