@@ -79,7 +79,7 @@ class blockchain_lab:
     def status(self):
         print("Status of nodes: ")
         print(str(requests.get("http://localhost:8000/status").text))
-        for i in range(self.number_of_nodes):
+        for i in range(self.node_number):
             print(
                "- " + str(requests.get(f"http://localhost:80{i+1}0/status").text)
             )
