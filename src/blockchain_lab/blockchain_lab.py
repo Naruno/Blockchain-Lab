@@ -269,19 +269,6 @@ def blockchain_lab_status():
         type=str,
         help="Give the node number to the blockchain lab",
     )
-    parser.add_argument(
-        "-scn",
-        "--securitycirclenumber",
-        default=1,
-        type=str,
-        help="Give the security circle number to the blockchain lab",
-    )
-
-    parser.add_argument("-p",
-                        "--path",
-                        default=os.getcwd(),
-                        type=str,
-                        help="Give the path to the blockchain lab")
 
     args = parser.parse_args()
 
@@ -293,9 +280,7 @@ def blockchain_lab_status():
 
     path = args.path
 
-    blockchain_lab(node_number=nodenumber,
-                   security_circle_number=securitycirclenumber,
-                   path=path).status()
+    blockchain_lab(node_number=nodenumber).status()
 
 
 def blockchain_lab_send_transaction():
