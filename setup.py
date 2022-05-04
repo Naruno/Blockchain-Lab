@@ -100,7 +100,7 @@ blockchain_lab_send_transaction -r decentra-network -a 5000 -d blockchain-lab
             "blockchain_lab_create_local=blockchain_lab.blockchain_lab:blockchain_lab_create_local",
             "blockchain_lab_delete_docker=blockchain_lab.blockchain_lab:blockchain_lab_delete_docker",
             "blockchain_lab_delete_local=blockchain_lab.blockchain_lab:blockchain_lab_delete_local",
-            "blockchain_lab_status=blockchain_lab.blockchain_lab:blockchain_lab.status",
+            "blockchain_lab_status=blockchain_lab.blockchain_lab:blockchain_lab_status",
             "blockchain_lab_send_transaction=blockchain_lab.blockchain_lab:blockchain_lab_send_transaction",
         ],
     },

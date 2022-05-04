@@ -76,16 +76,14 @@ class blockchain_lab:
 
         os.chdir(self.old_path)
 
-    @staticmethod
-    def status():
-        node_1_status = requests.get("http://localhost:8000/status").text
-        node_2_status = requests.get("http://localhost:8010/status").text
-        node_3_status = requests.get("http://localhost:8020/status").text
-
+    def status(self):
         print("Status of nodes: ")
-        print(f"- {node_1_status}")
-        print(f"- {node_2_status}")
-        print(f"- {node_3_status}")
+        print(str(requests.get("http://localhost:8000/status").text))
+        for i in range(self.number_of_nodes):
+            print(
+               "- " + str(requests.get(f"http://localhost:80{i+1}0/status").text)
+            )
+        
 
     @staticmethod
     def send_transaction(receiver, amount, data="blockchain-lab"):
@@ -107,31 +105,30 @@ def blockchain_lab_create_docker():
     parser.add_argument(
         "-nn",
         "--nodenumber",
+        default=3,
         type=str,
         help="Give the node number to the blockchain lab",
     )
     parser.add_argument(
         "-scn",
         "--securitycirclenumber",
+        default=1,
         type=str,
         help="Give the security circle number to the blockchain lab",
     )
 
     parser.add_argument("-p",
                         "--path",
+                        default=os.getcwd(),
                         type=str,
                         help="Give the path to the blockchain lab")
 
     args = parser.parse_args()
 
-    nodenumber = 3
-    securitycirclenumber = 1
-    path = os.getcwd()
 
-    if args.nodenumber is not None:
-        nodenumber = args.nodenumber
-    if args.securitycirclenumber is not None:
-        securitycirclenumber = args.securitycirclenumber
+
+    nodenumber = args.nodenumber
+    securitycirclenumber = args.securitycirclenumber
     if args.path is not None:
         path = args.path
 
@@ -147,33 +144,34 @@ def blockchain_lab_create_local():
     parser.add_argument(
         "-nn",
         "--nodenumber",
+        default=3,
         type=str,
         help="Give the node number to the blockchain lab",
     )
     parser.add_argument(
         "-scn",
         "--securitycirclenumber",
+        default=1,
         type=str,
         help="Give the security circle number to the blockchain lab",
     )
 
     parser.add_argument("-p",
                         "--path",
+                        default=os.getcwd(),
                         type=str,
                         help="Give the path to the blockchain lab")
 
     args = parser.parse_args()
 
-    nodenumber = 3
-    securitycirclenumber = 1
-    path = os.getcwd()
 
-    if args.nodenumber is not None:
-        nodenumber = args.nodenumber
-    if args.securitycirclenumber is not None:
-        securitycirclenumber = args.securitycirclenumber
-    if args.path is not None:
-        path = args.path
+
+
+    nodenumber = args.nodenumber
+
+    securitycirclenumber = args.securitycirclenumber
+
+    path = args.path
 
     blockchain_lab(node_number=nodenumber,
                    security_circle_number=securitycirclenumber,
@@ -187,33 +185,33 @@ def blockchain_lab_delete_docker():
     parser.add_argument(
         "-nn",
         "--nodenumber",
+        default=3,
         type=str,
         help="Give the node number to the blockchain lab",
     )
     parser.add_argument(
         "-scn",
         "--securitycirclenumber",
+        default=1,
         type=str,
         help="Give the security circle number to the blockchain lab",
     )
 
     parser.add_argument("-p",
                         "--path",
+                        default=os.getcwd(),
                         type=str,
                         help="Give the path to the blockchain lab")
 
     args = parser.parse_args()
 
-    nodenumber = 3
-    securitycirclenumber = 1
-    path = os.getcwd()
 
-    if args.nodenumber is not None:
-        nodenumber = args.nodenumber
-    if args.securitycirclenumber is not None:
-        securitycirclenumber = args.securitycirclenumber
-    if args.path is not None:
-        path = args.path
+
+    nodenumber = args.nodenumber
+
+    securitycirclenumber = args.securitycirclenumber
+
+    path = args.path
 
     blockchain_lab(node_number=nodenumber,
                    security_circle_number=securitycirclenumber,
@@ -227,37 +225,77 @@ def blockchain_lab_delete_local():
     parser.add_argument(
         "-nn",
         "--nodenumber",
+        default=3,
         type=str,
         help="Give the node number to the blockchain lab",
     )
     parser.add_argument(
         "-scn",
         "--securitycirclenumber",
+        default=1,
         type=str,
         help="Give the security circle number to the blockchain lab",
     )
 
     parser.add_argument("-p",
                         "--path",
+                        default=os.getcwd(),
                         type=str,
                         help="Give the path to the blockchain lab")
 
     args = parser.parse_args()
 
-    nodenumber = 3
-    securitycirclenumber = 1
-    path = os.getcwd()
 
-    if args.nodenumber is not None:
-        nodenumber = args.nodenumber
-    if args.securitycirclenumber is not None:
-        securitycirclenumber = args.securitycirclenumber
-    if args.path is not None:
-        path = args.path
+
+    nodenumber = args.nodenumber
+
+    securitycirclenumber = args.securitycirclenumber
+
+    path = args.path
 
     blockchain_lab(node_number=nodenumber,
                    security_circle_number=securitycirclenumber,
                    path=path).delete_local()
+
+
+def blockchain_lab_status():
+    parser = argparse.ArgumentParser(
+        description="Get the status of blockchain lab.")
+
+    parser.add_argument(
+        "-nn",
+        "--nodenumber",
+        default=3,
+        type=str,
+        help="Give the node number to the blockchain lab",
+    )
+    parser.add_argument(
+        "-scn",
+        "--securitycirclenumber",
+        default=1,
+        type=str,
+        help="Give the security circle number to the blockchain lab",
+    )
+
+    parser.add_argument("-p",
+                        "--path",
+                        default=os.getcwd(),
+                        type=str,
+                        help="Give the path to the blockchain lab")
+
+    args = parser.parse_args()
+
+
+
+    nodenumber = args.nodenumber
+
+    securitycirclenumber = args.securitycirclenumber
+
+    path = args.path
+
+    blockchain_lab(node_number=nodenumber,
+                   security_circle_number=securitycirclenumber,
+                   path=path).status()
 
 
 def blockchain_lab_send_transaction():
@@ -276,6 +314,6 @@ def blockchain_lab_send_transaction():
     print(args.data)
 
     if len(sys.argv) < 3:
-        print("Please give the receiver (-r) adress and amount (-a)")
+        print("Please give the receiver (-r) adress and amount (-a) and data (-d)")
     else:
         blockchain_lab.send_transaction(args.receiver, args.amount, args.data)
