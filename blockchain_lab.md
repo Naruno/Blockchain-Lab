@@ -23,7 +23,7 @@ blockchain_lab_status
 ## Send A Transaction
 
 ```bash
-blockchain_lab_send_transaction -r Decentra-Network -a 5000 -d Hello_universe_i_am_from_Decentra_Network_Blockchain
+blockchain_lab_send_transaction -r Decentra-Network -a 5000 -d blockchain-lab
 ```
 <walkthrough-footnote>Blockchain Lab Tutorial</walkthrough-footnote>
 

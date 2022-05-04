@@ -86,7 +86,7 @@ class blockchain_lab:
         
 
     @staticmethod
-    def send_transaction(receiver, amount, data="blockchain-lab"):
+    def send_transaction(receiver, amount, data):
         requests.get(
             f"http://localhost:8000/send/coin-data/{receiver}/{amount}/{data}/123"
         )
@@ -291,7 +291,7 @@ def blockchain_lab_send_transaction():
                         type=str,
                         help="Give the receiver adress")
     parser.add_argument("-a", "--amount", default=5000, type=str, help="Give the amount")
-    parser.add_argument("-d", "--data", default="Hello, i am blockchain lab.", type=str, help="Give the data")
+    parser.add_argument("-d", "--data", default="blockchain-lab", type=str, help="Give the data")
 
     args = parser.parse_args()
 
