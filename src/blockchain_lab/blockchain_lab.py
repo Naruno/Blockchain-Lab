@@ -13,7 +13,11 @@ import requests
 
 
 class blockchain_lab:
-    def __init__(self, node_number=3, security_circle_number=1, path=os.getcwd()):
+
+    def __init__(self,
+                 node_number=3,
+                 security_circle_number=1,
+                 path=os.getcwd()):
         self.node_number = node_number
         self.security_circle_number = security_circle_number
         self.old_path = os.getcwd()
@@ -23,7 +27,8 @@ class blockchain_lab:
 
         os.chdir(self.path)
 
-        os.system("git clone https://github.com/Decentra-Network/Decentra-Network")
+        os.system(
+            "git clone https://github.com/Decentra-Network/Decentra-Network")
         os.system("docker pull ghcr.io/decentra-network/api:latest")
         os.system(
             f"python3 Decentra-Network/auto_builders/docker.py -nn {self.node_number} -scn {self.security_circle_number} -i -r -s"
@@ -39,7 +44,8 @@ class blockchain_lab:
             print("Local builded lab only available on Linux")
             return
 
-        os.system("git clone https://github.com/Decentra-Network/Decentra-Network")
+        os.system(
+            "git clone https://github.com/Decentra-Network/Decentra-Network")
         os.system(
             f"python3 Decentra-Network/auto_builders/local.py -nn {self.node_number} -scn {self.security_circle_number} -i -r -s"
         )
@@ -74,7 +80,8 @@ class blockchain_lab:
         print("Status of nodes: ")
         print(str(requests.get("http://localhost:8000/status").text))
         for i in range(self.node_number):
-            print("- " + str(requests.get(f"http://localhost:80{i}0/status").text))
+            print("- " +
+                  str(requests.get(f"http://localhost:80{i}0/status").text))
 
     @staticmethod
     def send_transaction(receiver, amount, data):
@@ -82,7 +89,8 @@ class blockchain_lab:
             f"http://localhost:8000/send/coin-data/{receiver}/{amount}/{data}/123"
         )
         time.sleep(15)
-        result = requests.get("http://localhost:8000/export/transactions/json").text
+        result = requests.get(
+            "http://localhost:8000/export/transactions/json").text
 
         print("Result of the transaction: ")
         print(result)
@@ -90,8 +98,7 @@ class blockchain_lab:
 
 def blockchain_lab_create_docker():
     parser = argparse.ArgumentParser(
-        description="Create blockchain lab with decentra-network-api docker."
-    )
+        description="Create blockchain lab with decentra-network-api docker.")
 
     parser.add_argument(
         "-nn",
@@ -123,15 +130,14 @@ def blockchain_lab_create_docker():
     if args.path is not None:
         path = args.path
 
-    blockchain_lab(
-        node_number=nodenumber, security_circle_number=securitycirclenumber, path=path
-    ).create_docker()
+    blockchain_lab(node_number=nodenumber,
+                   security_circle_number=securitycirclenumber,
+                   path=path).create_docker()
 
 
 def blockchain_lab_create_local():
     parser = argparse.ArgumentParser(
-        description="Create blockchain lab with local system."
-    )
+        description="Create blockchain lab with local system.")
 
     parser.add_argument(
         "-nn",
@@ -164,15 +170,14 @@ def blockchain_lab_create_local():
 
     path = args.path
 
-    blockchain_lab(
-        node_number=nodenumber, security_circle_number=securitycirclenumber, path=path
-    ).create_local()
+    blockchain_lab(node_number=nodenumber,
+                   security_circle_number=securitycirclenumber,
+                   path=path).create_local()
 
 
 def blockchain_lab_delete_docker():
     parser = argparse.ArgumentParser(
-        description="Delete blockchain lab with decentra-network-api docker."
-    )
+        description="Delete blockchain lab with decentra-network-api docker.")
 
     parser.add_argument(
         "-nn",
@@ -205,15 +210,14 @@ def blockchain_lab_delete_docker():
 
     path = args.path
 
-    blockchain_lab(
-        node_number=nodenumber, security_circle_number=securitycirclenumber, path=path
-    ).delete_docker()
+    blockchain_lab(node_number=nodenumber,
+                   security_circle_number=securitycirclenumber,
+                   path=path).delete_docker()
 
 
 def blockchain_lab_delete_local():
     parser = argparse.ArgumentParser(
-        description="Delete blockchain lab with local system."
-    )
+        description="Delete blockchain lab with local system.")
 
     parser.add_argument(
         "-nn",
@@ -246,13 +250,14 @@ def blockchain_lab_delete_local():
 
     path = args.path
 
-    blockchain_lab(
-        node_number=nodenumber, security_circle_number=securitycirclenumber, path=path
-    ).delete_local()
+    blockchain_lab(node_number=nodenumber,
+                   security_circle_number=securitycirclenumber,
+                   path=path).delete_local()
 
 
 def blockchain_lab_status():
-    parser = argparse.ArgumentParser(description="Get the status of blockchain lab.")
+    parser = argparse.ArgumentParser(
+        description="Get the status of blockchain lab.")
 
     parser.add_argument(
         "-nn",
@@ -272,7 +277,8 @@ def blockchain_lab_status():
 
 
 def blockchain_lab_send_transaction():
-    parser = argparse.ArgumentParser(description="A fully functional blockchain lab.")
+    parser = argparse.ArgumentParser(
+        description="A fully functional blockchain lab.")
 
     parser.add_argument(
         "-r",
@@ -281,12 +287,16 @@ def blockchain_lab_send_transaction():
         type=str,
         help="Give the receiver adress",
     )
-    parser.add_argument(
-        "-a", "--amount", default=5000, type=str, help="Give the amount"
-    )
-    parser.add_argument(
-        "-d", "--data", default="blockchain-lab", type=str, help="Give the data"
-    )
+    parser.add_argument("-a",
+                        "--amount",
+                        default=5000,
+                        type=str,
+                        help="Give the amount")
+    parser.add_argument("-d",
+                        "--data",
+                        default="blockchain-lab",
+                        type=str,
+                        help="Give the data")
 
     args = parser.parse_args()
 
