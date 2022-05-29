@@ -81,9 +81,9 @@ class blockchain_lab:
         print(str(requests.get("http://localhost:8000/status").text))
         for i in range(self.node_number):
             print(
-               "- " + str(requests.get(f"http://localhost:80{i}0/status").text)
+                "- " +
+                str(requests.get(f"http://localhost:80{i}0/status").text)
             )
-        
 
     @staticmethod
     def send_transaction(receiver, amount, data):
@@ -125,8 +125,6 @@ def blockchain_lab_create_docker():
 
     args = parser.parse_args()
 
-
-
     nodenumber = args.nodenumber
     securitycirclenumber = args.securitycirclenumber
     if args.path is not None:
@@ -163,9 +161,6 @@ def blockchain_lab_create_local():
                         help="Give the path to the blockchain lab")
 
     args = parser.parse_args()
-
-
-
 
     nodenumber = args.nodenumber
 
@@ -205,8 +200,6 @@ def blockchain_lab_delete_docker():
 
     args = parser.parse_args()
 
-
-
     nodenumber = args.nodenumber
 
     securitycirclenumber = args.securitycirclenumber
@@ -245,8 +238,6 @@ def blockchain_lab_delete_local():
 
     args = parser.parse_args()
 
-
-
     nodenumber = args.nodenumber
 
     securitycirclenumber = args.securitycirclenumber
@@ -272,8 +263,6 @@ def blockchain_lab_status():
 
     args = parser.parse_args()
 
-
-
     nodenumber = args.nodenumber
 
     path = args.path
@@ -290,8 +279,10 @@ def blockchain_lab_send_transaction():
                         default="DecentraNetworkCommunity",
                         type=str,
                         help="Give the receiver adress")
-    parser.add_argument("-a", "--amount", default=5000, type=str, help="Give the amount")
-    parser.add_argument("-d", "--data", default="blockchain-lab", type=str, help="Give the data")
+    parser.add_argument("-a", "--amount", default=5000,
+                        type=str, help="Give the amount")
+    parser.add_argument("-d", "--data", default="blockchain-lab",
+                        type=str, help="Give the data")
 
     args = parser.parse_args()
 
