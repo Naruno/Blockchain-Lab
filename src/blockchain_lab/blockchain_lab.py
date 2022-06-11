@@ -271,7 +271,6 @@ def blockchain_lab_status():
 
     nodenumber = args.nodenumber
 
-    path = args.path
 
     blockchain_lab(node_number=nodenumber).status()
 
