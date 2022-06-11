@@ -17,11 +17,11 @@ class blockchain_lab:
     def __init__(self,
                  node_number=3,
                  security_circle_number=1,
-                 path=os.getcwd()):
+                 lab_path=None):
         self.node_number = node_number
         self.security_circle_number = security_circle_number
         self.old_path = os.getcwd()
-        self.path = path
+        self.path = lab_path if lab_path not None else os.getcwd()
 
     def create_docker(self):
 
@@ -132,7 +132,7 @@ def blockchain_lab_create_docker():
 
     blockchain_lab(node_number=nodenumber,
                    security_circle_number=securitycirclenumber,
-                   path=path).create_docker()
+                   lab_path=path).create_docker()
 
 
 def blockchain_lab_create_local():
@@ -172,7 +172,7 @@ def blockchain_lab_create_local():
 
     blockchain_lab(node_number=nodenumber,
                    security_circle_number=securitycirclenumber,
-                   path=path).create_local()
+                   lab_path=path).create_local()
 
 
 def blockchain_lab_delete_docker():
@@ -212,7 +212,7 @@ def blockchain_lab_delete_docker():
 
     blockchain_lab(node_number=nodenumber,
                    security_circle_number=securitycirclenumber,
-                   path=path).delete_docker()
+                   lab_path=path).delete_docker()
 
 
 def blockchain_lab_delete_local():
@@ -252,7 +252,7 @@ def blockchain_lab_delete_local():
 
     blockchain_lab(node_number=nodenumber,
                    security_circle_number=securitycirclenumber,
-                   path=path).delete_local()
+                   lab_path=path).delete_local()
 
 
 def blockchain_lab_status():
