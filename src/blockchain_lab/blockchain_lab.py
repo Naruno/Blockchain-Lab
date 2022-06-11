@@ -81,7 +81,7 @@ class blockchain_lab:
         print(str(requests.get("http://localhost:8000/status").text))
         for i in range(self.node_number):
             print("- " +
-                  str(requests.get(f"http://localhost:810{i}/status").text))
+                  str(requests.get(f"http://localhost:810{i+1}/status").text))
 
     @staticmethod
     def send_transaction(receiver, amount, data):
