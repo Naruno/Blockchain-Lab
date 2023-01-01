@@ -85,12 +85,18 @@ class blockchain_lab:
 
     @staticmethod
     def send_transaction(receiver, amount, data):
-        requests.get(
-            f"http://localhost:8000/send/coin-data/{receiver}/{amount}/{data}/123"
-        )
-        time.sleep(15)
+        requests.post(
+            "http://localhost:8000/send/",
+            {
+                "to_user": receiver,
+                "amount": amount,
+                "data": data,
+                "password": "123"
+            },
+        )        
+        time.sleep(55)
         result = requests.get(
-            "http://localhost:8000/export/transactions/json").text
+            "http://localhost:8000/transactions/all").text
 
         print("Result of the transaction: ")
         print(result)
@@ -132,7 +138,7 @@ def blockchain_lab_create_docker():
 
     blockchain_lab(node_number=nodenumber,
                    security_circle_number=securitycirclenumber,
-                   lab_path=path).create_docker()
+                   path=path).create_docker()
 
 
 def blockchain_lab_create_local():
