@@ -6,21 +6,37 @@ changelog:
       - restyled-io
   categories:
 
-    - title: Transaction
+    - title: Integration
       labels:
-        - Transaction
-        
-    - title: Status
+        - Integration
+
+    - title: Security
       labels:
-        - Status
+        - Security
+
+    - title: Builds
+      labels:
+        - Builds
+
+    - title: Windows
+      labels:
+        - Windows
+
+    - title: Linux
+      labels:
+        - Linux
+
+    - title: Wallet
+      labels:
+        - Wallet
 
     - title: Accounts
       labels:
         - Accounts
 
-    - title: APP
+    - title: Apps
       labels:
-        - APP
+        - Apps
 
     - title: Auto-Builders
       labels:
@@ -30,54 +46,54 @@ changelog:
       labels:
         - Backup
 
-    - title: Block
+    - title: Blockchain
       labels:
-        - Block
-        - Block-Time-Optimizer
-        - Hash-Calculation
+        - Blockchain
+
+    - title: Transactions
+      labels:
         - Send
+        - Transactions
 
     - title: CLI
       labels:
-        - CLI-Menu
-        - CLI-Parameters
+        - CLI
 
-    - title: Connection
+    - title: Node
       labels:
-        - Connection
         - Node
+
+    - title: API
+      labels:
         - API
 
     - title: Consensus
       labels:
         - Consensus
 
-    - title: Package
-      labels:
-        - Docker
-        - Setup
-        - Setups
 
-    - title: Documentation
+    - title: Packages
       labels:
-        - Documentation
+        - Packages
+
+    - title: Docs
+      labels:
+        - Docs
 
     - title: Tests
       labels:
-        - Functional-Test
-        - Stability-Test
-        - Unit-Test
-        - Test-Environments
+        - Functional-Tests
+        - Stability-Tests
+        - Unit-Tests
         - Tests
 
     - title: GitHub
       labels:
-        - Github-Actions
+        - GitHub
 
     - title: Google
       labels:
         - Google-Cloud-Shell
-        - Google-Colab
 
     - title: GUI
       labels:
@@ -86,6 +102,10 @@ changelog:
     - title: Licence
       labels:
         - Licence
+
+    - title: Lib
+      labels:
+        - Lib
 
     - title: Logging
       labels:
@@ -122,6 +142,15 @@ changelog:
     - title: Research
       labels:
         - Research
+
+    - title: Settings
+      labels:
+        - Settings
+
+    - title: Status
+      labels:
+        - Status
+
 
     - title: Other Changes
       labels:
