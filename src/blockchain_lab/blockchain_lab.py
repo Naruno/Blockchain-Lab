@@ -78,11 +78,14 @@ class blockchain_lab:
 
     def status(self):
         print("Status of nodes: ")
+        the_message = ""
+        the_message += str(requests.get("http://localhost:8000/status").text)
         print(str(requests.get("http://localhost:8000/status").text))
         for i in range(self.node_number - 1):
+            the_message += "- " +str(requests.get(f"http://localhost:{8100 + i + 1}/status").text)
             print("- " +
                   str(requests.get(f"http://localhost:{8100 + i + 1}/status").text))
-
+        return the_message
     @staticmethod
     def send_transaction(receiver, amount, data):
         requests.post(
@@ -100,6 +103,7 @@ class blockchain_lab:
 
         print("Result of the transaction: ")
         print(result)
+        return result
 
 
 def blockchain_lab_create_docker():
