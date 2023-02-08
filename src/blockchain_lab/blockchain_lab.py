@@ -29,7 +29,7 @@ class blockchain_lab:
 
         os.system(
             "git clone https://github.com/Decentra-Network/Decentra-Network")
-        os.system("docker pull ghcr.io/decentra-network/api:latest")
+        os.system("docker build -t ghcr.io/decentra-network/api:latest -f Decentra-Network/docker/local/api/Dockerfile .")
         os.system(
             f"python3 Decentra-Network/auto_builders/docker.py -nn {self.node_number} -scn {self.security_circle_number} -i -r -s"
         )
