@@ -29,7 +29,8 @@ class blockchain_lab:
 
         os.system(
             "git clone https://github.com/Decentra-Network/Decentra-Network")
-        os.system("docker build -t ghcr.io/decentra-network/api:latest -f Decentra-Network/docker/local/api/Dockerfile .")
+        os.system(
+            "docker build -t ghcr.io/decentra-network/api:latest -f Decentra-Network/docker/local/api/Dockerfile .")
         os.system(
             f"python3 Decentra-Network/auto_builders/docker.py -nn {self.node_number} -scn {self.security_circle_number} -i -r -s"
         )
@@ -82,10 +83,13 @@ class blockchain_lab:
         the_message += str(requests.get("http://localhost:8000/status").text)
         print(str(requests.get("http://localhost:8000/status").text))
         for i in range(self.node_number - 1):
-            the_message += "- " +str(requests.get(f"http://localhost:{8100 + i + 1}/status").text)
+            the_message += "- " + \
+                str(requests.get(
+                    f"http://localhost:{8100 + i + 1}/status").text)
             print("- " +
                   str(requests.get(f"http://localhost:{8100 + i + 1}/status").text))
         return the_message
+
     @staticmethod
     def send_transaction(receiver, amount, data):
         requests.post(
@@ -96,7 +100,7 @@ class blockchain_lab:
                 "data": data,
                 "password": "123"
             },
-        )        
+        )
         time.sleep(55)
         result = requests.get(
             "http://localhost:8000/transactions/all").text
@@ -280,7 +284,6 @@ def blockchain_lab_status():
     args = parser.parse_args()
 
     nodenumber = args.nodenumber
-
 
     blockchain_lab(node_number=nodenumber).status()
 
