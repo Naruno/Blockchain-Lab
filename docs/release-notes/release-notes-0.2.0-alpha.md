@@ -5,7 +5,7 @@ In this minor version, the Using in another script added.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/Decentra-Network/Blockchain-Lab/issues>
+  <https://github.com/Naruno/Blockchain-Lab/issues>
 
 Compatibility
 ==============

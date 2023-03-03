@@ -5,7 +5,7 @@ In this minor version, include a improvements for status function.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/Decentra-Network/Blockchain-Lab/issues>
+  <https://github.com/Naruno/Blockchain-Lab/issues>
 
 Compatibility
 ==============
@@ -23,7 +23,7 @@ With this release you can give information for status for node number.
 =================
 
 ### Status
-* 22 adding node number information use for blocckhain lab status function by @onuratakan in https://github.com/Decentra-Network/Blockchain-Lab/pull/23
+* 22 adding node number information use for blocckhain lab status function by @onuratakan in https://github.com/Naruno/Blockchain-Lab/pull/23
 
 Credits
 =======

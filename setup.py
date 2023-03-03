@@ -5,7 +5,7 @@ setup(
     version="0.8.0",
     description="""A fully functional blockchain lab.""",
     long_description="""
-# Blockchain Lab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Decentra-Network/Blockchain-Lab/blob/master/blockchain_lab.ipynb) [![Open in Cloud Shell](https://img.shields.io/badge/Google-Open%20In%20Cloud%20Shell-blue)](https://ssh.cloud.google.com/cloudshell/open?shellonly=true&cloudshell_git_repo=https://github.com/Decentra-Network/Blockchain-Lab&cloudshell_tutorial=blockchain_lab.md)
+# Blockchain Lab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Naruno/Blockchain-Lab/blob/master/blockchain_lab.ipynb) [![Open in Cloud Shell](https://img.shields.io/badge/Google-Open%20In%20Cloud%20Shell-blue)](https://ssh.cloud.google.com/cloudshell/open?shellonly=true&cloudshell_git_repo=https://github.com/Naruno/Blockchain-Lab&cloudshell_tutorial=blockchain_lab.md)
 
 
 A fully functional blockchain lab.
@@ -67,7 +67,7 @@ blockchain_lab.status()
 ```python
 from blockchain_lab import blockchain_lab
 
-blockchain_lab.send_transaction(receiver = "decentra-network", amount = 5000, data = "blockchain-lab")
+blockchain_lab.send_transaction(receiver = "naruno", amount = 5000, data = "blockchain-lab")
 ```
 
 ## In command line
@@ -108,14 +108,14 @@ blockchain_lab_status
 ### Test with a transaction
 
 ```console
-blockchain_lab_send_transaction -r decentra-network -a 5000 -d blockchain-lab
+blockchain_lab_send_transaction -r naruno -a 5000 -d blockchain-lab
 ```
 
 """,
     long_description_content_type="text/markdown",
-    url="https://github.com/Decentra-Network/Blockchain-Lab",
-    author="Decentra Network Developers",
-    author_email="onur@decentranetwork.org",
+    url="https://github.com/Naruno/Blockchain-Lab",
+    author="Naruno Developers",
+    author_email="onur.atakan.ulusoy@naruno.org",
     license="MPL-2.0",
     packages=["blockchain_lab"],
     package_dir={"": "src"},

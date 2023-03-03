@@ -5,7 +5,7 @@ In this minor version, we fix and sync some functions.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/Decentra-Network/Blockchain-Lab/issues>
+  <https://github.com/Naruno/Blockchain-Lab/issues>
 
 Compatibility
 ==============
@@ -35,11 +35,11 @@ Fixed send transaction function.
 ## Docker
 Fixed create docker based network function.
 ### GitHub
-* github: Synced release.yml with Decentra Network repository
-* github: Add CodeQL workflow for GitHub code scanning by @lgtm-com in https://github.com/Decentra-Network/Blockchain-Lab/pull/31
+* github: Synced release.yml with Naruno repository
+* github: Add CodeQL workflow for GitHub code scanning by @lgtm-com in https://github.com/Naruno/Blockchain-Lab/pull/31
 
 
-**Full Changelog**: https://github.com/Decentra-Network/Blockchain-Lab/compare/v0.7.0-alpha...v0.8.0-alpha
+**Full Changelog**: https://github.com/Naruno/Blockchain-Lab/compare/v0.7.0-alpha...v0.8.0-alpha
 
 Credits
 =======

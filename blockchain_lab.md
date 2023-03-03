@@ -25,7 +25,7 @@ blockchain_lab_status
 ## Send A Transaction
 
 ```bash
-blockchain_lab_send_transaction -r Decentra-Network -a 5000 -d blockchain-lab
+blockchain_lab_send_transaction -r Naruno -a 5000 -d blockchain-lab
 ```
 
 <walkthrough-footnote>Blockchain Lab Tutorial</walkthrough-footnote>
@@ -40,7 +40,7 @@ blockchain_lab_delete_local
 
 ## Conclusion
 
-Now you can use our [API document](https://docs.decentranetwork.org/systems/api.html) to send transactions to your test environment.
+Now you can use our [API document](https://docs.naruno.org/systems/api.html) to send transactions to your test environment.
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 

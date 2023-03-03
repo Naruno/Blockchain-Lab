@@ -28,10 +28,10 @@ class blockchain_lab:
         os.chdir(self.path)
 
         os.system(
-            "git clone https://github.com/Decentra-Network/Decentra-Network")
-        os.system("docker pull ghcr.io/decentra-network/api:latest")
+            "git clone https://github.com/Naruno/Naruno")
+        os.system("docker pull ghcr.io/naruno/api:latest")
         os.system(
-            f"python3 Decentra-Network/auto_builders/docker.py -nn {self.node_number} -scn {self.security_circle_number} -i -r -s"
+            f"python3 Naruno/auto_builders/docker.py -nn {self.node_number} -scn {self.security_circle_number} -i -r -s"
         )
 
         os.chdir(self.old_path)
@@ -45,9 +45,9 @@ class blockchain_lab:
             return
 
         os.system(
-            "git clone https://github.com/Decentra-Network/Decentra-Network")
+            "git clone https://github.com/Naruno/Naruno")
         os.system(
-            f"python3 Decentra-Network/auto_builders/local.py -nn {self.node_number} -scn {self.security_circle_number} -i -r -s"
+            f"python3 Naruno/auto_builders/local.py -nn {self.node_number} -scn {self.security_circle_number} -i -r -s"
         )
 
         os.chdir(self.old_path)
@@ -61,7 +61,7 @@ class blockchain_lab:
             return
 
         os.system(
-            f"python3 Decentra-Network/auto_builders/docker.py -nn {self.node_number} -scn {self.security_circle_number} -d"
+            f"python3 Naruno/auto_builders/docker.py -nn {self.node_number} -scn {self.security_circle_number} -d"
         )
 
         os.chdir(self.old_path)
@@ -71,7 +71,7 @@ class blockchain_lab:
         os.chdir(self.path)
 
         os.system(
-            f"python3 Decentra-Network/auto_builders/local.py -nn {self.node_number} -scn {self.security_circle_number} -d"
+            f"python3 Naruno/auto_builders/local.py -nn {self.node_number} -scn {self.security_circle_number} -d"
         )
 
         os.chdir(self.old_path)
@@ -108,7 +108,7 @@ class blockchain_lab:
 
 def blockchain_lab_create_docker():
     parser = argparse.ArgumentParser(
-        description="Create blockchain lab with decentra-network-api docker.")
+        description="Create blockchain lab with naruno-api docker.")
 
     parser.add_argument(
         "-nn",
@@ -187,7 +187,7 @@ def blockchain_lab_create_local():
 
 def blockchain_lab_delete_docker():
     parser = argparse.ArgumentParser(
-        description="Delete blockchain lab with decentra-network-api docker.")
+        description="Delete blockchain lab with naruno-api docker.")
 
     parser.add_argument(
         "-nn",
@@ -292,7 +292,7 @@ def blockchain_lab_send_transaction():
     parser.add_argument(
         "-r",
         "--receiver",
-        default="DecentraNetworkCommunity",
+        default="NarunoCommunity",
         type=str,
         help="Give the receiver adress",
     )
