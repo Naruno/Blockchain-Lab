@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="blockchain_lab",
-    version="0.8.0",
+    version="0.9.0",
     description="""A fully functional blockchain lab.""",
     long_description="""
 # Blockchain Lab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Naruno/Blockchain-Lab/blob/master/blockchain_lab.ipynb) [![Open in Cloud Shell](https://img.shields.io/badge/Google-Open%20In%20Cloud%20Shell-blue)](https://ssh.cloud.google.com/cloudshell/open?shellonly=true&cloudshell_git_repo=https://github.com/Naruno/Blockchain-Lab&cloudshell_tutorial=blockchain_lab.md)
